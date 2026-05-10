@@ -17,6 +17,13 @@ import asyncio
 
 import httpx
 
+# Allow relative imports when run directly
+import sys
+from pathlib import Path
+if __name__ == '__main__' and __package__ is None:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    __package__ = 'async_examples.question_1'
+
 
 # ─────────────────────────────────────────────
 #  Data types
@@ -115,16 +122,16 @@ class LLMStreamClient(ABC):
 # ─────────────────────────────────────────────
 #  Demo / quick test
 # ─────────────────────────────────────────────
-from llm_factory_class import LLMFactory
 
 
 async def _demo() -> None:
+    from .llm_factory_class import LLMFactory
 
     messages = [{"role": "user", "content": "Count from 1 to 5, one number per line."}]
 
     # Swap in any client:
-    factory = LLMFactory(model_name="claude-3-5-haiku-20241022")
-    client = factory.create_client(provider="anthropic")
+    factory = LLMFactory(model_name="gemini-3-flash-preview")
+    client = factory.create_client(provider="gemini")
 
     print("── streaming ──")
     async for token in client.stream(messages):

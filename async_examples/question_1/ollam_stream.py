@@ -2,7 +2,7 @@
 #  Ollama (local)
 # ─────────────────────────────────────────────
 
-from question_1 import LLMConfig, LLMStreamClient, StreamToken
+from .question_1 import LLMConfig, LLMStreamClient, StreamToken
 import json
 from typing import Optional
 

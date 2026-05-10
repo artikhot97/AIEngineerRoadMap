@@ -2,8 +2,8 @@
 #  OpenAI (and compatible: Together, Groq, etc.)
 # ─────────────────────────────────────────────
 
-from question_1 import LLMStreamClient, LLMConfig, StreamToken
-from llm_factory_class import LLMFactory
+from .question_1 import LLMStreamClient, LLMConfig, StreamToken
+from .llm_factory_class import LLMFactory
 from typing import Optional
 import os
 import json

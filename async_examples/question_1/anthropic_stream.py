@@ -1,8 +1,8 @@
 # ─────────────────────────────────────────────
 #  Anthropic (Claude)
 # ─────────────────────────────────────────────
-from question_1 import LLMStreamClient, LLMConfig, StreamToken
-from llm_factory_class import LLMFactory
+from .question_1 import LLMStreamClient, LLMConfig, StreamToken
+from .llm_factory_class import LLMFactory
 from typing import Optional, Any
 import os
 import json
