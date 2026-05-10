@@ -15,3 +15,10 @@ def http_get_sync(url: str) -> JSONObject:
 
 async def http_get(url: str) -> JSONObject:
     return await asyncio.to_thread(http_get_sync, url)
+
+def http_post_sync(url: str, headers: JSONObject, data: JSONObject) -> JSONObject:
+    response = requests.post(url, headers=headers, json=data)
+    return response.json()
+
+async def http_post(url: str, headers: JSONObject, data: JSONObject) -> JSONObject:
+    return await asyncio.to_thread(http_post_sync, url, headers, data)
