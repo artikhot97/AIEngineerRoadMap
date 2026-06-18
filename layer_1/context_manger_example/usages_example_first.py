@@ -1,5 +1,5 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from example_first import GPUMemoryManager
+from layer_1.context_manger_example.example_first import GPUMemoryManager
 import torch
 
 tokenizer = AutoTokenizer.from_pretrained("gpt2")
