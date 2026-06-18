@@ -1,5 +1,5 @@
 import asyncio
-from req_http import http_get, JSONObject
+from layer_1.async_examples.req_http import http_get, JSONObject
 from random import randint
 from typing import AsyncIterable
 from time import perf_counter
